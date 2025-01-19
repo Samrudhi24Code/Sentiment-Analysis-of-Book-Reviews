@@ -9,8 +9,6 @@ Created on Fri Jan 17 10:24:58 2025
 # Develop a sentiment analysis model to classify book reviews into positive or negative categories.
 # This will help businesses understand customer sentiment and improve their product offerings.
 
-
-
 # Importing the required libraries
 import pandas as pd
 import re
@@ -28,25 +26,10 @@ from sklearn.metrics import accuracy_score, confusion_matrix, classification_rep
 nltk.download('punkt')  # Needed for tokenizing the text into words
 nltk.download('stopwords')  # Needed to remove common stopwords that don't add value to sentiment analysis
 
-# Sample dataset of book reviews
-data = {
-    'review': [
-        'I loved this book! The characters were great and the plot was interesting.',
-        'Horrible book, I didn\'t like the story at all.',
-        'This was a good read. I enjoyed the pacing and the character development.',
-        'The book was boring and didn\'t capture my attention.',
-        'An amazing book! The writing style was wonderful.',
-        'Not worth the time, the plot was predictable.',
-        'I really enjoyed this book, the plot twists were amazing.',
-        'It was an average read, nothing special about it.',
-        'The book was very slow, I couldn\'t finish it.',
-        'Excellent book! Highly recommended.'
-    ],
-    'sentiment': ['positive', 'negative', 'positive', 'negative', 'positive', 'negative', 'positive', 'negative', 'positive']
-}
+# Load the dataset from a CSV file
 
-# Convert the data into a pandas DataFrame
-df = pd.DataFrame(data)
+file_path = 'reveiws.csv'  # here there are two column one is reveiw and other is sentiment i.e. positive,negative
+df = pd.read_csv(file_path)
 
 # Display the first few rows of the dataset
 print(df.head())
